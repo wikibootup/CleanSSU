@@ -1,10 +1,14 @@
-from flask import request
+from flask import request, render_template
 from app import app, models
 from flask.ext.sqlalchemy import SQLAlchemy 
 
 db = SQLAlchemy(app)
 
-#Api write
+@app.route('/')
+@app.route('/index')
+def index():
+	return render_template('index.html')
+
 @app.route('/insertdata', methods=['GET', 'POST'])
 def insertdata():
 
@@ -23,4 +27,3 @@ def insertdata():
 
 	if request.method=='GET':
 		return "Hello, World!"
-
