@@ -7,7 +7,9 @@ db = SQLAlchemy(app)
 @app.route('/')
 @app.route('/index')
 def index():
-	return render_template('index.html')
+	paymentinfos = models.PaymentInfo.query.all()
+
+	return render_template('index.html', paymentinfos=paymentinfos)
 
 @app.route('/insertdata', methods=['GET', 'POST'])
 def insertdata():

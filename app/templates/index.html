@@ -60,18 +60,11 @@
     <tr>
     <td>No.</td><td>결제그룹</td><td>소비처</td><td>결제금액</td><td>카드회사</td><td>결제일시</td>
     </tr>
+    {% for paymentinfo in paymentinfos%}
     <tr>
-    <td>1</td><td>동아리연합회</td><td>제이엠호프</td><td>16,500</td><td>신한카드</td><td>2015/04/10 12:03</td>
+    <td>{{paymentinfo.id}}</td><td>{{paymentinfo.admin_group}}</td><td>{{paymentinfo.payment_store}}</td><td>{{paymentinfo.cost}}</td><td>{{paymentinfo.card_company}}</td><td>{{paymentinfo.date_time}}</td>
     </tr>
-    <tr>
-    <td>2</td><td>동아리연합회</td><td>K2노래방</td><td>8,000</td><td>신한카드</td><td>2015/05/20 08:12</td>
-    </tr>
-    <tr>
-    <td>3</td><td>동아리연합회</td><td>와라와라신촌</td><td>35,730</td><td>신한카드</td><td>2015/06/12 19:34</td>
-    </tr>
-    <tr>
-    <td>4</td><td>동아리연합회</td><td>맥주창고</td><td>44,800</td><td>신한카드</td><td>2015/06/22 22:50</td>
-    </tr>
+    {% endfor %}
     </table>
   </div>
 
