@@ -1,6 +1,6 @@
 from app import db
 
-class PaymentInfo(Base):
+class PaymentInfo(db.Model):
 
 	__tablename__ = 'payment_info'
 
@@ -18,6 +18,3 @@ class PaymentInfo(Base):
 		self.date_time = date_time
 		self.cost = cost
 		self.payment_store = payment_store
-
-	# def __repr__(self):
-	# 	return ''

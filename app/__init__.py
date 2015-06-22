@@ -1,4 +1,9 @@
 from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy 
 
 app = Flask(__name__)
-from app import api, model
+app.config.from_object('config')
+db = SQLAlchemy(app)
+
+#Fix location This code
+from app import api, model, database
