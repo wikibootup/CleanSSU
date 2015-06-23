@@ -1,13 +1,14 @@
 from flask import request, render_template
 from app import app, models
-from flask.ext.sqlalchemy import SQLAlchemy 
+from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import desc
 
 db = SQLAlchemy(app)
 
 @app.route('/')
 @app.route('/index')
 def index():
-	paymentinfos = models.PaymentInfo.query.all()
+	paymentinfos = models.PaymentInfo.query.order_by(desc(models.PaymentInfo.id))
 
 	return render_template('index.html', paymentinfos=paymentinfos)
 
