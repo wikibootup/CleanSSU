@@ -62,3 +62,6 @@ target/
 
 # Custom Venv
 venv/
+
+# Custom environment setting
+.env
